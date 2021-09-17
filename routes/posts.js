@@ -5,8 +5,19 @@ router.get('/', (req,res)=>{
     res.send("Posts");
 });
 
-router.get('/post', (req,res)=>{
-    res.send("Posts alanı");
+router.post('/', (req,res)=>{
+    const post = new Post({
+        title: req.body.title,
+        description: req.body.description
+    });
+
+    post.save()
+        .then(data => {
+            res.json(data);
+        })
+        .catch(err =>{
+            res.json( err)
+        });
 });
 
 
