@@ -15,7 +15,7 @@ mongoose.connect(
     {useNewUrlParser:true, 
     useUnifiedTopology:true},
     ()=>console.log("Connected to db")
-)
+);
 
 //Routers
 app.get('/', (req,res)=>{
